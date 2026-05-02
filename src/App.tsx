@@ -39,10 +39,10 @@ export default function App() {
           </div>
 
           <div className="contact-list" role="list">
-            <a role="listitem" href="mailto:joe@wickets.example" className="contact-item">
+            <a role="listitem" href="mailto:wicketssales1@gmail.com" className="contact-item">
               wicketssales1@gmail.com
             </a>
-            <a role="listitem" href="tel:+15550123456" className="contact-item">
+            <a role="listitem" href="tel:+12087476716" className="contact-item">
               +1 (208) 747-6716
             </a>
             <a
