@@ -22,7 +22,7 @@ export default function App() {
 
           <div className="iframe-wrap">
             <iframe
-              src="https://calendly.com/joe/30min?hide_gdpr_banner=1"
+              src="https://calendly.com/wicketsales1"
               title="Schedule an appointment with Joe"
               loading="lazy"
             />
@@ -40,14 +40,14 @@ export default function App() {
 
           <div className="contact-list" role="list">
             <a role="listitem" href="mailto:joe@wickets.example" className="contact-item">
-              joe@wickets.example
+              wicketssales1@gmail.com
             </a>
             <a role="listitem" href="tel:+15550123456" className="contact-item">
-              +1 (555) 012-3456
+              +1 (208) 747-6716
             </a>
             <a
               role="listitem"
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/joe-torman-371809237/"
               target="_blank"
               rel="noreferrer"
               className="contact-item"
