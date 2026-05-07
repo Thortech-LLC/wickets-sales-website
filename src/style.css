@@ -8,6 +8,7 @@
   --line: #d7deec;
   --blue: #1a5cff;
   --blue-soft: #e8efff;
+  --red: #f05840;
   --radius: 20px;
 }
 
@@ -43,6 +44,14 @@ body {
   border-radius: var(--radius);
   padding: 2rem;
   box-shadow: 0 14px 44px rgba(8, 10, 15, 0.09);
+}
+
+.hero-logo {
+  display: block;
+  margin: 0 auto 1rem;
+  height: 56px;
+  object-fit: contain;
+  border: 1.5px solid var(--red);
 }
 
 .eyebrow {
@@ -166,6 +175,10 @@ h1 {
 
   .hero {
     padding: 1.3rem;
+  }
+
+  .hero-logo {
+    height: 44px;
   }
 
   .content-grid {

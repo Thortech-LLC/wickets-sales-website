@@ -1,7 +1,10 @@
+import logo from '/logo-text.png'
+
 export default function App() {
   return (
     <div className="page-shell">
       <header className="hero reveal delay-1">
+        <img src={logo} alt="Wickets Sales" className="hero-logo" style={{ borderRadius: "7.5px" }} />
         <p className="eyebrow">Wickets Sales Site</p>
         <h1>Schedule Time With Joe</h1>
         <p className="hero-copy">
