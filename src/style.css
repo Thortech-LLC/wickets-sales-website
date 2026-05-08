@@ -1,15 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
-  --bg: #f7f9fc;
-  --surface: #ffffff;
-  --ink: #080a0f;
-  --muted: #4e5b78;
-  --line: #d7deec;
-  --blue: #1a5cff;
-  --blue-soft: #e8efff;
-  --red: #f05840;
+  color-scheme: light;
+  --bg: #f6f8fc;
+  --bg-accent: rgba(219, 231, 255, 0.78);
+  --surface: rgba(255, 255, 255, 0.88);
+  --surface-strong: #ffffff;
+  --ink: #0a0d14;
+  --muted: #55647f;
+  --line: rgba(142, 157, 187, 0.32);
+  --line-strong: rgba(106, 124, 160, 0.5);
+  --blue: #1f63ff;
+  --blue-soft: rgba(31, 99, 255, 0.1);
+  --red: #ef5c46;
+  --shadow: 0 18px 44px rgba(15, 28, 53, 0.1);
+  --hero-bg: linear-gradient(120deg, rgba(255, 255, 255, 0.95) 0%, rgba(233, 241, 255, 0.92) 100%);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --contact-bg: linear-gradient(160deg, rgba(255, 255, 255, 0.98) 0%, rgba(244, 248, 255, 0.96) 100%);
   --radius: 20px;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #080d17;
+  --bg-accent: rgba(48, 68, 112, 0.42);
+  --surface: rgba(14, 20, 33, 0.82);
+  --surface-strong: #101728;
+  --ink: #edf2ff;
+  --muted: #a5b2cf;
+  --line: rgba(150, 170, 213, 0.18);
+  --line-strong: rgba(150, 170, 213, 0.32);
+  --blue: #7ea4ff;
+  --blue-soft: rgba(126, 164, 255, 0.12);
+  --red: #ff806e;
+  --shadow: 0 22px 54px rgba(0, 0, 0, 0.34);
+  --hero-bg: linear-gradient(120deg, rgba(16, 23, 40, 0.96) 0%, rgba(11, 16, 29, 0.96) 100%);
+  --card-bg: rgba(15, 21, 35, 0.9);
+  --contact-bg: linear-gradient(160deg, rgba(18, 26, 44, 0.96) 0%, rgba(13, 19, 33, 0.98) 100%);
 }
 
 * {
@@ -21,9 +48,9 @@ body {
   font-family: 'Space Grotesk', sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at 8% 10%, #dbe7ff 0, transparent 38%),
-    radial-gradient(circle at 88% 20%, #d4e0ff 0, transparent 35%),
-    linear-gradient(160deg, #fdfefe 0%, #f3f7ff 100%);
+    radial-gradient(circle at 8% 10%, var(--bg-accent) 0, transparent 38%),
+    radial-gradient(circle at 88% 20%, rgba(126, 164, 255, 0.24) 0, transparent 35%),
+    linear-gradient(160deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 78%, var(--surface-strong)) 100%);
   min-height: 100vh;
 }
 
@@ -39,11 +66,21 @@ body {
 }
 
 .hero {
-  background: linear-gradient(120deg, #ffffff 0%, #eef4ff 100%);
+  position: relative;
+  background: var(--hero-bg);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 2rem;
-  box-shadow: 0 14px 44px rgba(8, 10, 15, 0.09);
+  box-shadow: var(--shadow);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: calc(var(--radius) - 1px);
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .hero-logo {
@@ -83,11 +120,41 @@ h1 {
 }
 
 .card {
-  background: var(--surface);
+  background: var(--card-bg);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 1.15rem;
-  box-shadow: 0 10px 34px rgba(13, 22, 42, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 0.6rem 0.95rem;
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  border-color: var(--blue);
+  background: color-mix(in srgb, var(--surface-strong) 72%, transparent);
+}
+
+.theme-toggle:focus-visible,
+.contact-item:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
 
 .section-head h2 {
@@ -131,7 +198,7 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 0.8rem 0.9rem;
-  background: linear-gradient(160deg, #ffffff 0%, #f6f9ff 100%);
+  background: var(--contact-bg);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
