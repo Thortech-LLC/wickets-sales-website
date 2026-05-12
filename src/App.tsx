@@ -39,7 +39,7 @@ export default function App() {
           {isDark ? 'Light mode' : 'Dark mode'}
         </button>
         <img src={logo} alt="Wickets Sales" className="hero-logo" style={{ borderRadius: "7.5px" }} />
-        <p className="eyebrow">Wickets Sales Site</p>
+        <p className="eyebrow">Wickets Sales</p>
         <h1>Schedule Time With Joe</h1>
         <p className="hero-copy">
           Book a quick intro meeting to discuss your background, goals, and next
