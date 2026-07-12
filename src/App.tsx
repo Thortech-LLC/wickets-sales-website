@@ -33,12 +33,17 @@ export default function App() {
         <button
           type="button"
           className="theme-toggle"
-          onClick={() => setTheme(isDark ? 'light' : 'dark')}
-          aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          onClick={() => setTheme(isDark ? "light" : "dark")}
+          aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
         >
-          {isDark ? 'Light mode' : 'Dark mode'}
+          {isDark ? "Light mode" : "Dark mode"}
         </button>
-        <img src={logo} alt="Wickets Sales" className="hero-logo" style={{ borderRadius: "7.5px" }} />
+        <img
+          src={logo}
+          alt="Wickets Sales"
+          className="hero-logo"
+          style={{ borderRadius: "7.5px" }}
+        />
         <p className="eyebrow">Wickets Sales</p>
         <h1>Schedule Time With Joe</h1>
         <p className="hero-copy">
@@ -48,7 +53,10 @@ export default function App() {
       </header>
 
       <main className="content-grid">
-        <section className="card schedule-card reveal delay-2" aria-labelledby="schedule-heading">
+        <section
+          className="card schedule-card reveal delay-2"
+          aria-labelledby="schedule-heading"
+        >
           <div className="section-head">
             <h2 id="schedule-heading">Pick an Appointment Time</h2>
             <p>
@@ -66,7 +74,10 @@ export default function App() {
           </div>
         </section>
 
-        <section className="card contact-card reveal delay-3" aria-labelledby="contact-heading">
+        <section
+          className="card contact-card reveal delay-3"
+          aria-labelledby="contact-heading"
+        >
           <div className="section-head">
             <h2 id="contact-heading">Contact</h2>
             <p>
@@ -76,7 +87,11 @@ export default function App() {
           </div>
 
           <div className="contact-list" role="list">
-            <a role="listitem" href="mailto:wicketssales1@gmail.com" className="contact-item">
+            <a
+              role="listitem"
+              href="mailto:wicketssales1@gmail.com"
+              className="contact-item"
+            >
               wicketssales1@gmail.com
             </a>
             <a role="listitem" href="tel:+12087476716" className="contact-item">
@@ -91,9 +106,18 @@ export default function App() {
             >
               LinkedIn Profile
             </a>
+            <a
+              role="listitem"
+              href="https://www.instagram.com/wicketsnation/?hl=en"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-item"
+            >
+              Instagram
+            </a>
           </div>
         </section>
       </main>
     </div>
-  )
+  );
 }
