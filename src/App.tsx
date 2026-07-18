@@ -61,7 +61,7 @@ export default function App() {
             <h2 id="schedule-heading">Pick an Appointment Time</h2>
             <p>
               Use the scheduler below to book directly with Joe. Times are shown
-              in your local timezone.
+              in your local timezone.You can also connect with us on Instagram.
             </p>
           </div>
 
