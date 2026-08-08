@@ -1,31 +1,34 @@
-import { useEffect, useState } from 'react'
-import logo from '/logo-text.png'
+import { useEffect, useState } from "react";
+import logo from "/logo-text.png";
+import ContactForm from "./components/contact_form/ContactForm.jsx";
 
-type Theme = 'light' | 'dark'
+type Theme = "light" | "dark";
 
 function getInitialTheme(): Theme {
-  if (typeof window === 'undefined') {
-    return 'dark'
+  if (typeof window === "undefined") {
+    return "dark";
   }
 
-  const savedTheme = window.localStorage.getItem('theme')
-  if (savedTheme === 'light' || savedTheme === 'dark') {
-    return savedTheme
+  const savedTheme = window.localStorage.getItem("theme");
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
   }
 
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 }
 
 export default function App() {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme)
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   useEffect(() => {
-    document.documentElement.dataset.theme = theme
-    document.documentElement.style.colorScheme = theme
-    window.localStorage.setItem('theme', theme)
-  }, [theme])
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
 
-  const isDark = theme === 'dark'
+  const isDark = theme === "dark";
 
   return (
     <div className="page-shell">
@@ -53,7 +56,7 @@ export default function App() {
       </header>
 
       <main className="content-grid">
-        <section
+        {/* <section
           className="card schedule-card reveal delay-2"
           aria-labelledby="schedule-heading"
         >
@@ -72,7 +75,8 @@ export default function App() {
               loading="lazy"
             />
           </div>
-        </section>
+        </section> */}
+        <ContactForm />
 
         <section
           className="card contact-card reveal delay-3"
