@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import logo from "/logo-text.png";
 import ContactForm from "./components/contact_form/ContactForm.jsx";
+import Header from "./components/header/Header.jsx"
 
 function getInitialTheme() {
   if (typeof window === "undefined") {
@@ -30,30 +30,12 @@ export default function App() {
 
   return (
     <div className="page-shell">
-      <header className="hero reveal delay-1">
-        <button
-          type="button"
-          className="theme-toggle"
-          onClick={() => setTheme(isDark ? "light" : "dark")}
-          aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-        >
-          {isDark ? "Light mode" : "Dark mode"}
-        </button>
-        <img
-          src={logo}
-          alt="Wickets Sales"
-          className="hero-logo"
-          style={{ borderRadius: "7.5px" }}
-        />
-        <p className="eyebrow">Wickets Sales</p>
-        <h1>Schedule Time With Joe</h1>
-        <p className="hero-copy">
-          Book a quick intro meeting to discuss your background, goals, and next
-          steps with our hiring team.
-        </p>
-      </header>
-
+      <Header
+        isDark={isDark}
+        onToggleTheme={() => setTheme(isDark ? "light" : "dark")}
+      />
       <main className="content-grid">
+        
         {/* <section
           className="card schedule-card reveal delay-2"
           aria-labelledby="schedule-heading"
@@ -80,16 +62,8 @@ export default function App() {
           className="card contact-card reveal delay-3"
           aria-labelledby="contact-heading"
         >
-          <div className="section-head">
-            <h2 id="contact-heading">Contact</h2>
-            <p>
-              Have a question before booking? Reach out and we will get back to
-              you soon.
-            </p>
-          </div>
-
           <div className="contact-list" role="list">
-            <a
+            {/* <a
               role="listitem"
               href="mailto:wicketssales1@gmail.com"
               className="contact-item"
@@ -107,7 +81,7 @@ export default function App() {
               className="contact-item"
             >
               LinkedIn Profile
-            </a>
+            </a> */}
             <a
               role="listitem"
               href="https://www.instagram.com/wicketsnation/?hl=en"

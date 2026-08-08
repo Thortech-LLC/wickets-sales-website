@@ -4,10 +4,6 @@ function ContactForm() {
       className="card contact-card reveal delay-2"
       aria-labelledby="contact-form-heading"
     >
-      <h2 id="contact-form-heading" className="section-head">
-        Contact / Schedule
-      </h2>
-
       <input name="firstName" type="text" placeholder="First Name" />
 
       <input name="lastName" type="text" placeholder="Last Name" />
