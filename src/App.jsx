@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import logo from "/logo-text.png";
 import ContactForm from "./components/contact_form/ContactForm.jsx";
 
-type Theme = "light" | "dark";
-
-function getInitialTheme(): Theme {
+function getInitialTheme() {
   if (typeof window === "undefined") {
     return "dark";
   }
@@ -20,7 +18,7 @@ function getInitialTheme(): Theme {
 }
 
 export default function App() {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  const [theme, setTheme] = useState(getInitialTheme);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
